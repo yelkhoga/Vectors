@@ -33,6 +33,6 @@ void draw() {
   if (loc.y + diam/2 >= height) {
     vel.y = -abs(vel.y);
   } else if (loc.y - diam/2 <= 0) {
-    vel.y = -abs(vel.y);
+    vel.y = abs(vel.y);
   }
 }
