@@ -26,7 +26,7 @@ void draw() {
 
   //wrap the ball's position
   if (x + diam/2 >= width) {
-    x = -diam/2;     
+    x = -diam/2;
   } else if (x - diam/2 <= 0) {
     x = width + diam/2;
   }
@@ -35,3 +35,4 @@ void draw() {
   } else if (y - diam/2 <= 0) {
     y = height + diam/2;
   }
+}
