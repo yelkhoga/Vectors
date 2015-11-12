@@ -1,6 +1,6 @@
 //declare variables
 float diam;
-PVector loc,vel;
+PVector loc, vel;
 
 
 void setup() {
@@ -8,9 +8,10 @@ void setup() {
   size(800, 600);
 
   //initialize variables
-loc = new PVector(width/2,height/2);
+  loc = new PVector(width/2, height/2);
   diam = 80;
-  vel = new PVector(random(-5,5),random(-5,5));
+  vel = PVector.random2D();
+  vel.mult(50);
 }
 
 void draw() {
@@ -21,8 +22,8 @@ void draw() {
   ellipse(loc.x, loc.y, diam, diam);
 
   //add velocity to position
-  loc.x += vel.x;
-  loc.y += vel.y;
+
+  loc.add(vel);
 
   //bounce ball if it hits walls
   if (loc.x + diam/2 >= width) {
