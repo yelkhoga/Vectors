@@ -18,7 +18,7 @@ void setup() {
 
 void draw() {
     acc = PVector.random2D();
-  acc.mult(.01);
+  acc.mult(.1);
   //draw background to cover previous frame
 
   //draw ball
