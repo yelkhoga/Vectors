@@ -1,24 +1,29 @@
 //declare variables
-float  diam = 20;
-PVector loc, vel;
+float  diam = 40;
+PVector loc, vel, acc ;
 
 
 
 void setup() {
   //set size of canvas
   size(800, 600);
-
+  background(100);
   //initialize variables
   loc = new PVector (width/2, height/2);
+
   vel = PVector.random2D();
-  vel.mult(random(2,10));
+  vel.mult(0);
+
 }
 
 void draw() {
+    acc = PVector.random2D();
+  acc.mult(.01);
   //draw background to cover previous frame
-  background(0);
 
   //draw ball
+  vel.add(acc);
+  vel.limit(5);
   ellipse(loc.x, loc.y, diam, diam);
 
   //add velocity to position
